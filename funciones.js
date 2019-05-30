@@ -127,8 +127,36 @@ const promedioSup = ()=>{
     });
 }
 
-const actualizar = (data)=>{
-    
+const actualizar = (nom,asig,nota)=>{
+    if (!nom || !asig || !nota){
+        console.log("No se ha suministrado la información necesaria para actualizar la información");        
+    }else{
+        listar();
+        let est = listadoEstudiantes.find(buscar => buscar.nombre == nom);
+        if (!est){
+            console.log("Alumno no existe");
+        }else{
+            est[asig]=nota;
+            guardar();
+        }
+    }
+}
+
+const eliminar = (nom) =>{
+    if (!nom){
+        console.log("Suministre un nombre del estudiante a eliminar");        
+    }else{
+        listar();
+        let est = listadoEstudiantes.filter(buscar => buscar.nombre != nom);
+        if (!est){
+            console.log("Alumno a eliminar no se encuentra registrado");
+        }else{
+            if (est.length != listadoEstudiantes.length){
+                listadoEstudiantes=est;
+                guardar();
+            }        
+        }
+    }
 }
 
 /**
@@ -140,5 +168,7 @@ module.exports = {
     mostrarEst,
     ganaM,
     promedioEst,
-    promedioSup
+    promedioSup,
+    actualizar,
+    eliminar
 }

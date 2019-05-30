@@ -18,8 +18,11 @@ switch (argv._[0]) {
     case "promedioSuperior":
             funciones.promedioSup();
         break;
-    case "actualizarNota":
-        funciones.Actualizar(argv);
+    case "actualizaest":
+        funciones.actualizar(argv.nombre, argv.asignatura, argv.calificacion);
+        break;
+    case "eliminaest":
+        funciones.eliminar(argv.nombre);
         break;
     default:
         break;
