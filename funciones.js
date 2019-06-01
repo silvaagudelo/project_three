@@ -127,6 +127,12 @@ const promedioSup = ()=>{
     });
 }
 
+/**
+ * 
+ * @param {nombre del estudiante a eliminar} nom 
+ * @param {Asignatura de cambiar la nota} asig 
+ * @param {nueva nota del estudiante} nota 
+ */
 const actualizar = (nom,asig,nota)=>{
     if (!nom || !asig || !nota){
         console.log("No se ha suministrado la información necesaria para actualizar la información");        
@@ -142,6 +148,10 @@ const actualizar = (nom,asig,nota)=>{
     }
 }
 
+/**
+ * 
+ * @param {Nombre del estudiante a eliminar} nom 
+ */
 const eliminar = (nom) =>{
     if (!nom){
         console.log("Suministre un nombre del estudiante a eliminar");        
@@ -160,8 +170,8 @@ const eliminar = (nom) =>{
 }
 
 /**
- * Exposición de los métodos
- * */
+ * Exposición de métodos
+ */
 module.exports = {
     crear,
     mostrar,
